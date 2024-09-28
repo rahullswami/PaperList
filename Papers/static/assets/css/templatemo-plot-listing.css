@@ -1,11 +1,3 @@
-/*
-
-TemplateMo 564 Plot Listing
-
-https://templatemo.com/tm-564-plot-listing
-
-*/
-
 /* ---------------------------------------------
 Table of contents
 ------------------------------------------------
@@ -26,8 +18,8 @@ Table of contents
 /* 
 ---------------------------------------------
 font & reset css
---------------------------------------------- 
-*/
+---------------------------------------------  */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 /* 
 ---------------------------------------------
@@ -276,7 +268,7 @@ header
 }
 
 .header-area .main-nav a.logo {
-  background-image: url(../images/white-logo.png);
+  background-image: url(../images/black-logo.png);
   width: 166px;
   height: 58px;
   display: inline-block;

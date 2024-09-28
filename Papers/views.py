@@ -1,8 +1,11 @@
 from django.shortcuts import render
+from .models import *
 
 # Create your views here.
 def Index(request):
-    return render(request, 'index.html')
+    paper_models = Paper_Models.objects.all()
+
+    return render(request, 'index.html', {'papers': paper_models})
 
 def Category_page(request):
     return render(request, 'category.html')
