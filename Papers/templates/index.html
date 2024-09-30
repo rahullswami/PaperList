@@ -60,24 +60,25 @@
     </div>
   </div>
 
-
+  {% for paper in papers %}
+  {% if forloop.counter == 1 or forloop.counter == 2 or forloop.counter == 3 or forloop.counter == 4 %}
   <div class="popular-categories">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="section-heading">
-            <h2>Popular Categories</h2>
-            <h6>Check Them Out</h6>
+            <h2>{{paper.paper_categorys}}</h2>
+            <h6>{{paper.paper_names}}</h6>
           </div>
         </div>
+      
         <div class="col-lg-12">
           <div class="naccs">
             <div class="grid">
-              {% for paper in papers %}
               <div class="row">
                 <div class="col-lg-3">
                   <div class="menu">
-                    
+                   
                     <div class="first-thumb active">
                       <div class="thumb">
                         <span class="icon"><img src="/static/assets/images/search-icon-05.png" alt=""></span>
@@ -87,6 +88,7 @@
                    
                   </div>
                 </div> 
+               
                 <div class="col-lg-9 align-self-center">
                   <ul class="nacc">
                     <li class="active">
@@ -97,7 +99,7 @@
                               <div class="left-text">
                                 <h4>{{paper.paper_title}}</h4>
                                 <p>{{paper.paper_disc}}</p>
-                                <div class="main-white-button"><a href="#"><i class="fa fa-eye"></i> Discover More</a></div>
+                                <div class="main-white-button"><a href="/notes/"><i class="fa fa-eye"></i> Discover More</a></div>
                               </div>
                             </div>
                             <div class="col-lg-7 align-self-center">
@@ -111,22 +113,24 @@
                     </li>
                   </ul>
                 </div>          
+               
               </div>
-              {% endfor %}
             </div>
           </div>
         </div>
+  
       </div>
     </div>
   </div>
-
+  {% endif %}
+  {% endfor %}
 
   <div class="recent-listing">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="section-heading">
-            <h2>Recent Listing</h2>
+            <h2>Recent Adding</h2>
             <h6>Check Them Out</h6>
           </div>
         </div>
@@ -134,14 +138,16 @@
           <div class="owl-carousel owl-listing">
             <div class="item">
               <div class="row">
+                {% for paper in papers %}
+                {% if forloop.counter == 1 or forloop.counter == 2 or forloop.counter == 3 %}
                 <div class="col-lg-12">
                   <div class="listing-item">
                     <div class="left-image">
-                      <a href="#"><img src="/static/assets/images/listing-01.jpg" alt=""></a>
+                      <a href="/notes/"><img src="/media/{{paper.paper_images}}" alt=""></a>
                     </div>
                     <div class="right-content align-self-center">
-                      <a href="#"><h4>1. First Apartment Unit</h4></a>
-                      <h6>by: Sale Agent</h6>
+                      <a href="/notes/"><h4>{{paper.paper_names}}</h4></a>
+                      <h6>by: {{paper.user_name}}</h6>
                       <ul class="rate">
                         <li><i class="fa fa-star-o"></i></li>
                         <li><i class="fa fa-star-o"></i></li>
@@ -150,250 +156,92 @@
                         <li><i class="fa fa-star-o"></i></li>
                         <li>(18) Reviews</li>
                       </ul>
-                      <span class="price"><div class="icon"><img src="/static/assets/images/listing-icon-01.png" alt=""></div> $450 - $950 / month with taxes</span>
-                      <span class="details">Details: <em>2760 sq ft</em></span>
+                      <span class="price"><div class="icon"><img src="/static/assets/images/book.png" alt=""></div> Thank you for RRBMU</span>
+                      <span class="details">Details: <em>Recently Added</em></span>
                       <ul class="info">
-                        <li><img src="/static/assets/images/listing-icon-02.png" alt=""> 4 Bedrooms</li>
-                        <li><img src="/static/assets/images/listing-icon-03.png" alt=""> 4 Bathrooms</li>
+                        <li><img src="/static/assets/images/search-icon-05.png" alt=""> Read</li>
+                        <li><img src="/static/assets/images/search-icon-05.png" alt=""> Write</li>
                       </ul>
                       <div class="main-white-button">
-                        <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
+                        <a href="/contact/"><i class="fa fa-eye"></i> Contact Now</a>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-12">
-                  <div class="listing-item">
-                    <div class="left-image">
-                      <a href="#"><img src="/static/assets/images/listing-02.jpg" alt=""></a>
-                    </div>
-                    <div class="right-content align-self-center">
-                      <a href="#"><h4>2. Another House of Gaming</h4></a>
-                      <h6>by: Top Sale Agent</h6>
-                      <ul class="rate">
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li>(24) Reviews</li>
-                      </ul>
-                      <span class="price"><div class="icon"><img src="/static/assets/images/listing-icon-01.png" alt=""></div> $1,400 - $3,500 / month with taxes</span>
-                      <span class="details">Details: <em>3650 sq ft</em></span>
-                      <ul class="info">
-                        <li><img src="/static/assets/images/listing-icon-02.png" alt=""> 4 Bedrooms</li>
-                        <li><img src="/static/assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</li>
-                      </ul>
-                      <div class="main-white-button">
-                        <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="listing-item">
-                    <div class="left-image">
-                      <a href="#"><img src="/static/assets/images/listing-03.jpg" alt=""></a>
-                    </div>
-                    <div class="right-content align-self-center">
-                      <a href="#"><h4>3. Secret Place Hidden House</h4></a>
-                      <h6>by: Best Property</h6>
-                      <ul class="rate">
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li>(36) Reviews</li>
-                      </ul>
-                      <span class="price"><div class="icon"><img src="/static/assets/images/listing-icon-01.png" alt=""></div> $1,500 - $3,600 / month with taxes</span>
-                      <span class="details">Details: <em>5500 sq ft</em></span>
-                      <ul class="info">
-                        <li><img src="/static/assets/images/listing-icon-02.png" alt=""> 4 Bedrooms</li>
-                        <li><img src="/static/assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</li>
-                      </ul>
-                      <div class="main-white-button">
-                        <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                {% endif %}
+                {% endfor %}
               </div>
             </div>
             <div class="item">
               <div class="row">
+                {% for note in notes %}
+                {% if forloop.counter == 1 or forloop.counter == 2 or forloop.counter == 3 %}
                 <div class="col-lg-12">
                   <div class="listing-item">
                     <div class="left-image">
-                      <a href="#"><img src="/static/assets/images/listing-04.jpg" alt=""></a>
+                      <a href="/notes/"><img src="/media/{{note.note_images}}" alt=""></a>
                     </div>
                     <div class="right-content align-self-center">
-                      <a href="#"><h4>4. Sunshine Fourth Apartment</h4></a>
-                      <h6>by: Sale Agent</h6>
+                      <a href="/notes/"><h4>{{note.note_names}}</h4></a>
+                      <h6>by: {{note.user_name}}</h6>
                       <ul class="rate">
                         <li><i class="fa fa-star-o"></i></li>
                         <li><i class="fa fa-star-o"></i></li>
                         <li><i class="fa fa-star-o"></i></li>
                         <li><i class="fa fa-star-o"></i></li>
                         <li><i class="fa fa-star-o"></i></li>
-                        <li>(24) Reviews</li>
+                        <li>(18) Reviews</li>
                       </ul>
-                      <span class="price"><div class="icon"><img src="/static/assets/images/listing-icon-01.png" alt=""></div> $3,600 / month with taxes</span>
-                      <span class="details">Details: <em>3660 sq ft</em></span>
+                      <span class="price"><div class="icon"><img src="/static/assets/images/book.png" alt=""></div> Thank you for Lords University</span>
+                      <span class="details">Details: <em>Recently Added</em></span>
                       <ul class="info">
-                        <li><img src="/static/assets/images/listing-icon-02.png" alt=""> 5 Bedrooms</li>
-                        <li><img src="/static/assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</li>
+                        <li><img src="/static/assets/images/search-icon-05.png" alt=""> Read</li>
+                        <li><img src="/static/assets/images/search-icon-05.png" alt=""> Write</li>
                       </ul>
                       <div class="main-white-button">
-                        <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
+                        <a href="/contact/"><i class="fa fa-eye"></i> Contact Now</a>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-12">
-                  <div class="listing-item">
-                    <div class="left-image">
-                      <a href="#"><img src="/static/assets/images/listing-05.jpg" alt=""></a>
-                    </div>
-                    <div class="right-content align-self-center">
-                      <a href="#"><h4>5. Best House Of the Town</h4></a>
-                      <h6>by: Sale Agent</h6>
-                      <ul class="rate">
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li>(32) Reviews</li>
-                      </ul>
-                      <span class="price"><div class="icon"><img src="/static/assets/images/listing-icon-01.png" alt=""></div> $5,600 / month with taxes</span>
-                      <span class="details">Details: <em>1750 sq ft</em></span>
-                      <ul class="info">
-                        <li><img src="/static/assets/images/listing-icon-02.png" alt=""> 6 Bedrooms</li>
-                        <li><img src="/static/assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</li>
-                      </ul>
-                      <div class="main-white-button">
-                        <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="listing-item">
-                    <div class="left-image">
-                      <a href="#"><img src="/static/assets/images/listing-06.jpg" alt=""></a>
-                    </div>
-                    <div class="right-content align-self-center">
-                      <a href="#"><h4>6. Amazing Pool Party Villa</h4></a>
-                      <h6>by: Sale Agent</h6>
-                      <ul class="rate">
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li>(40) Reviews</li>
-                      </ul>
-                      <span class="price"><div class="icon"><img src="/static/assets/images/listing-icon-01.png" alt=""></div> $3,850 / month with taxes</span>
-                      <span class="details">Details: <em>3660 sq ft</em></span>
-                      <ul class="info">
-                        <li><img src="/static/assets/images/listing-icon-02.png" alt=""> 4 Bedrooms</li>
-                        <li><img src="/static/assets/images/listing-icon-03.png" alt=""> 3 Bathrooms</li>
-                      </ul>
-                      <div class="main-white-button">
-                        <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                {% endif %}
+                {% endfor %}
               </div>
             </div>
             <div class="item">
               <div class="row">
+                {% for paper in papers %}
+                {% if forloop.counter == 1 or forloop.counter == 2 or forloop.counter == 3 %}
                 <div class="col-lg-12">
                   <div class="listing-item">
                     <div class="left-image">
-                      <a href="#"><img src="/static/assets/images/listing-05.jpg" alt=""></a>
+                      <a href="/notes/"><img src="/media/{{paper.paper_images}}" alt=""></a>
                     </div>
                     <div class="right-content align-self-center">
-                      <a href="#"><h4>7. Sunny Apartment</h4></a>
-                      <h6>by: Sale Agent</h6>
+                      <a href="/notes/"><h4>{{paper.paper_names}}</h4></a>
+                      <h6>by: {{paper.user_name}}</h6>
                       <ul class="rate">
                         <li><i class="fa fa-star-o"></i></li>
                         <li><i class="fa fa-star-o"></i></li>
                         <li><i class="fa fa-star-o"></i></li>
                         <li><i class="fa fa-star-o"></i></li>
                         <li><i class="fa fa-star-o"></i></li>
-                        <li>(24) Reviews</li>
+                        <li>(18) Reviews</li>
                       </ul>
-                      <span class="price"><div class="icon"><img src="/static/assets/images/listing-icon-01.png" alt=""></div> $5,450 / month with taxes</span>
-                      <span class="details">Details: <em>1640 sq ft</em></span>
+                      <span class="price"><div class="icon"><img src="/static/assets/images/book.png" alt=""></div> Thank you for RRBMU</span>
+                      <span class="details">Details: <em>Recently Added</em></span>
                       <ul class="info">
-                        <li><img src="/static/assets/images/listing-icon-02.png" alt=""> 8 Bedrooms</li>
-                        <li><img src="/static/assets/images/listing-icon-03.png" alt=""> 5 Bathrooms</li>
+                        <li><img src="/static/assets/images/search-icon-05.png" alt=""> Read</li>
+                        <li><img src="/static/assets/images/search-icon-05.png" alt=""> Write</li>
                       </ul>
                       <div class="main-white-button">
-                        <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
+                        <a href="/contact/"><i class="fa fa-eye"></i> Contact Now</a>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-12">
-                  <div class="listing-item">
-                    <div class="left-image">
-                      <a href="#"><img src="/static/assets/images/listing-02.jpg" alt=""></a>
-                    </div>
-                    <div class="right-content align-self-center">
-                      <a href="#"><h4>8. Third House of Gaming</h4></a>
-                      <h6>by: Sale Agent</h6>
-                      <ul class="rate">
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li>(15) Reviews</li>
-                      </ul>
-                      <span class="price"><div class="icon"><img src="/static/assets/images/listing-icon-01.png" alt=""></div> $5,520 / month with taxes</span>
-                      <span class="details">Details: <em>1660 sq ft</em></span>
-                      <ul class="info">
-                        <li><img src="/static/assets/images/listing-icon-02.png" alt=""> 5 Bedrooms</li>
-                        <li><img src="/static/assets/images/listing-icon-03.png" alt=""> 4 Bathrooms</li>
-                      </ul>
-                      <div class="main-white-button">
-                        <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="listing-item">
-                    <div class="left-image">
-                      <a href="#"><img src="/static/assets/images/listing-06.jpg" alt=""></a>
-                    </div>
-                    <div class="right-content align-self-center">
-                      <a href="#"><h4>9. Relaxing BBQ Party Villa</h4></a>
-                      <h6>by: Sale Agent</h6>
-                      <ul class="rate">
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                        <li>(20) Reviews</li>
-                      </ul>
-                      <span class="price"><div class="icon"><img src="/static/assets/images/listing-icon-01.png" alt=""></div> $4,760 / month with taxes</span>
-                      <span class="details">Details: <em>2880 sq ft</em></span>
-                      <ul class="info">
-                        <li><img src="/static/assets/images/listing-icon-02.png" alt=""> 6 Bedrooms</li>
-                        <li><img src="/static/assets/images/listing-icon-03.png" alt=""> 4 Bathrooms</li>
-                      </ul>
-                      <div class="main-white-button">
-                        <a href="contact.html"><i class="fa fa-eye"></i> Contact Now</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                {% endif %}
+                {% endfor %}
               </div>
             </div>
           </div>
