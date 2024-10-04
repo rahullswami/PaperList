@@ -28,11 +28,13 @@
                   <div class="menu">
                     {% for note in  papers %}
                     {% if forloop.counter == 1 or forloop.counter == 2 or forloop.counter == 3 or forloop.counter == 4 or forloop.counter == 5 %}
+                    {% if note.paper_categorys %}
                     <div class="first-thumb active">
                       <div class="thumb">
                         <span class="icon"><img src="/static/assets/images/search-icon-05.png" alt=""><h4>{{note.paper_categorys}}</h4></span>    
                       </div>
                     </div>  
+                    {% endif %}
                     {% endif %}
                     {% endfor %}                
                   </div>
@@ -46,11 +48,15 @@
                             <div class="col-lg-12">
                               <div class="top-content">
                                 <div class="row">
+                                  {% for paper in  papers %}
+                                  {% if paper.paper_categorys == 'BA' %}
                                   <div class="col-lg-6">
                                     <div class="top-icon">
-                                      <span class="icon"><img src="/static/assets/images/search-icon-01.png" alt=""><h4>Apartments</h4></span> 
+                                      <span class="icon"><img src="/media/{{paper.paper_images}}" alt=""><h4>{{paper.paper_names}}</h4></span> 
                                     </div>
                                   </div>
+                                  {% endif %}
+                                  {% endfor %}
                                   <div class="col-lg-6">
                                     <div class="main-white-button">
                                       <a href="#"><i class="fa fa-plus"></i> Check Our Listings</a>
@@ -99,11 +105,15 @@
                             <div class="col-lg-12">
                               <div class="top-content">
                                 <div class="row">
+                                  {% for paper in  papers %}
+                                  {% if paper.paper_categorys == 'BCA' %}
                                   <div class="col-lg-6">
                                     <div class="top-icon">
-                                      <span class="icon"><img src="/static/assets/images/search-icon-02.png" alt=""><h4>Food &amp; Life</h4></span> 
+                                      <span class="icon"><img src="/media/{{paper.paper_images}}" alt=""><h4>{{paper.paper_names}}</h4></span> 
                                     </div>
                                   </div>
+                                  {% endif %}
+                                  {% endfor %}
                                   <div class="col-lg-6">
                                     <div class="main-white-button">
                                       <a href="#"><i class="fa fa-plus"></i> Check Our Listings</a>
@@ -155,11 +165,15 @@
                             <div class="col-lg-12">
                               <div class="top-content">
                                 <div class="row">
+                                  {% for paper in  papers %}
+                                  {% if paper.paper_categorys == 'BA' %}
                                   <div class="col-lg-6">
                                     <div class="top-icon">
-                                      <span class="icon"><img src="/static/assets/images/search-icon-03.png" alt=""><h4>Cars</h4></span> 
+                                      <span class="icon"><img src="/media/{{paper.paper_images}}" alt=""><h4>Cars</h4></span> 
                                     </div>
                                   </div>
+                                  {% endif %}
+                                  {% endfor %}
                                   <div class="col-lg-6">
                                     <div class="main-white-button">
                                       <a href="#"><i class="fa fa-plus"></i> Check Our Listings</a>
